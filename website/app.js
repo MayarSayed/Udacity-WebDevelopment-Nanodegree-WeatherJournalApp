@@ -16,9 +16,10 @@ const outputTemp    = document.getElementById("temp");
 const outputFeeling = document.getElementById("content");
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate =  d.getDate()+'.'+ d.getMonth()+1 +'.'+ d.getFullYear();
 
 
+/* Function to GET Web API Data*/
 const getData = async () => {
 	const request = await fetch(apiURL+`?zip=${inputZipCode.value}&appid=${apiKey}&units=metric`);
 	console.log("the zip code = ");
@@ -32,10 +33,8 @@ const getData = async () => {
     	console.log("error", error);
   		}
 };
-
+/* Function to POST data */
 const postData = async ( url = '', data = {})=>{
-	//console.log("data posted to server : ");
-    //console.log(data);
     const response = await fetch(url, {
       method: 'POST', 
       credentials: 'same-origin',
@@ -53,7 +52,7 @@ const postData = async ( url = '', data = {})=>{
       }
   };
 
-
+/* Function to GET Project Data and update the UI with given data*/
 const updateUI = async () => {
 	console.log("updateUI calleeed");
 	const request = await fetch('/showData');
@@ -61,9 +60,9 @@ const updateUI = async () => {
     const data = await request.json();
     console.log("update data in UI : ");
     console.log(data);
-    outputDate.innerHTML = data.date;
-    outputTemp.innerHTML = data.temp;
-    outputFeeling.innerHTML = data.feeling
+    outputDate.innerHTML = "Today's date : "+data.date;
+    outputTemp.innerHTML = "Temperature : "+data.temp;
+    outputFeeling.innerHTML = "Your Feeling : " +data.feeling
     //console.log(data);
     return ;
   	}  catch(error) {
@@ -73,16 +72,13 @@ const updateUI = async () => {
 
 generateBtn.addEventListener('click',clickAction);
 
+/* Function called by event listener */
 function clickAction(){
 	if(inputZipCode.value === ""){
-		//console.log("123 output");
 		alert('Please enter a zip code');
-		//console.log("any output");
 	}
 	else{
-		//console.log("heeeereeee");
 		getData().then((data)=> postData("/addData",{temp:data.main.temp,date:newDate,feeling:inputFeeling.value})).then(() => updateUI());
-		//console.log("finish");
 	}
 }
 

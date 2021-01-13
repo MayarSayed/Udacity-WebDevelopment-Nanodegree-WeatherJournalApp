@@ -5,11 +5,11 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(50px, auto);
     /* grid-template-columns:  */
     height:120vh;
-    background: #130833;
-    color: #f0d43a;
+    background: #0c2744;
+    color: #dadfec;
     justify-content: center;
     grid-gap: 0.5em;
     font-size: 20px;
@@ -21,9 +21,11 @@ body{
 }
 
 .entry{
-    background: rgba(59, 74, 107, .4);
-    width: 400px;
-    height: 200px;
+    background: #cdd4e8;
+    color: #0e1880;
+    width: 500px;
+    height: 170px;
+    padding: 5px;
 }
 
 #entryHolder{
@@ -45,10 +47,12 @@ body{
 .headline {
     margin-top: 70px;
     font-size: 40px;
-    color: #b82328;
+    color: #7caae8;
 
 }
 .title{
+    color: #111d3e;
+    margin: 5px;
 
 }
 
@@ -56,26 +60,27 @@ body{
 label{
     display:block;
     font-size: 27px;
-    color: #b82328;
+    color: #dadfec;
 }
 
 input{
     display:block;
     height: 60px;
     width: 320px;
-    background:#c28a8b;
-    color: #b82328;
+    background:#cdd4e8;
+    color: #111d3e;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
 }
 
 button{
-    width: 300px;
-    height: 75px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
+    width: 200px;
+    height: 50px;
+    background: #021f71;
+    color: #ffffff;
+    margin-left: 10px;
+    font-size: 25px;
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
@@ -85,8 +90,8 @@ h1{
 }
 
 textarea{
-    background:#c28a8b;
-    color: #b82328;
+    background:#cdd4e8;
+    color: #111d3e;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
@@ -99,19 +104,19 @@ button:focus {
 }
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
+    color: #111d3e; 
     font-family: 'Oswald', sans-serif;
 
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
+    color: #111d3e; 
     font-family: 'Oswald', sans-serif;
 
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
+    color: #111d3e; 
     font-family: 'Oswald', sans-serif;
 
 } 
