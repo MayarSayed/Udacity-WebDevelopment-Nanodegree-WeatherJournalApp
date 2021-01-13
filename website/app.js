@@ -55,12 +55,12 @@ const postData = async ( url = '', data = {})=>{
 
 
 const updateUI = async () => {
-	//console.log("updateUI calleeed");
+	console.log("updateUI calleeed");
 	const request = await fetch('/showData');
 	try {
     const data = await request.json();
-    //console.log("update data in UI : ");
-    //console.log(data);
+    console.log("update data in UI : ");
+    console.log(data);
     outputDate.innerHTML = data.date;
     outputTemp.innerHTML = data.temp;
     outputFeeling.innerHTML = data.feeling
@@ -81,7 +81,7 @@ function clickAction(){
 	}
 	else{
 		//console.log("heeeereeee");
-		getData().then((data)=> postData("/addData",{temp:data.main.temp,date:newDate,feeling:inputFeeling.value})).then(() => updateUI);
+		getData().then((data)=> postData("/addData",{temp:data.main.temp,date:newDate,feeling:inputFeeling.value})).then(() => updateUI());
 		//console.log("finish");
 	}
 }

@@ -39,6 +39,7 @@ app.post("/addData",(req,res)=>{
 	projectData.feeling = req.body.feeling;
 	console.log("and now the projectData = ");
 	console.log(projectData);
+	res.send(projectData);
 
 });
 
