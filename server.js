@@ -44,9 +44,8 @@ app.post("/addData",(req,res)=>{
 });
 
 app.get('/showData',(req,res)=>{
-	console.log("1 the project data send = ");
+	console.log("the project data send = ");
 	console.log(projectData);
 	res.send(projectData);
-	console.log("2 the project data send = ");
-	console.log(projectData);
+
 });
